@@ -1,4 +1,4 @@
-var Url_Handling_Http_Server = require('../lib/Url-Handling-Http-Server.js');
+var HttpServer = require('../lib/Url-Handling-Http-Server.js');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -20,15 +20,15 @@ var Url_Handling_Http_Server = require('../lib/Url-Handling-Http-Server.js');
     test.ifError(value)
 */
 
-exports['awesome'] = {
+exports['urlHandling'] = {
   setUp: function(done) {
     // setup here
     done();
   },
-  'no args': function(test) {
+  'CheckServerIsRunning': function(test) {
     test.expect(1);
     // tests here
-    test.equal(Url_Handling_Http_Server.awesome(), 'awesome', 'should be awesome.');
+    test.equal(HttpServer.CreateServer(), 'Server Started', 'Server should be started');
     test.done();
   }
 };
